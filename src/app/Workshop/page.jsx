@@ -114,6 +114,7 @@ const PostCard = ({ title, date, imageSrc, description,id }) => {
 export default function Index() {
   const [events, setEvents] = useState({});
   const [loading, setLoading] = useState(true);
+  const cat='Workshop';
 
   useEffect(() => {
     async function fetchEvents() {
@@ -122,7 +123,8 @@ export default function Index() {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'event-type':2
+            'event-type':2,
+            'category':cat
           },
         });
         
